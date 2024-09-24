@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Andrew Hunter | Projects</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/">About Me</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/experience">Experience</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -27,7 +27,7 @@
             <div class="project">
                 <h2>Noise2Notes</h2>
                 <p><strong>Stack:</strong> Python CLI</p>
-                <p>Using Google Colab, I utilized the Aubio, music21, and SoundFile libraries to convert an MP3 file to a MIDI output.
+                <p>Using Google Colab, I utilized the Aubio, music21, and SoundFile libraries to convert an MP3 file to a MIDI output - which was then converted to notes.
                     The origins came from my skill of relative pitch, and it was often a struggle to share my musical ideas to those who
                     were less musically gifted. The main purpose of this is often I don't play music as it is written, and improvise instead.
                     Instead of trying to remember what I'm playing, I thought it would be a better idea to record myself and have the next stage
@@ -40,7 +40,8 @@
                 <p><strong>Stack:</strong> Dart on Flutter, with an Ubuntu database server and PHP</p>
                 <p>I created this as part of a Mobile App and Cloud assignment for my Computing degree. It used Dart with Flutter for the front end,
                     and PHP for the backend APIs to save the users score and authentication credentials. Alonside this, I created HTML pages
-                    alongisde PHPMyAdmin, to add levels of user restriction to allow easier development of the backend.
+                    alongisde PHPMyAdmin, to add levels of user restriction to allow easier development of the backend. At some stage, I would love to
+                    have this available as a downloadable Android APK.
                 </p>
             </div>
     
@@ -50,7 +51,7 @@
                 <p>During the summer, I wanted to build a shed. Frustrated with available floor plan modeling software, I decided to build my own. This was done
                     fully in Javascript. The end goal of this is to integrate OpenAI to convert the 2D model into a 3D one.
                 </p>
-                <a href="modeller.html">View this live!</a>
+                <a href="modeller/index.html">View this live!</a>
             </div>
     
             <div class="project">
@@ -76,6 +77,6 @@
 
     <canvas id="backgroundCanvas"></canvas>
 
-    <script src="script.js"></script>
+    <script src="../scripts/script.js"></script>
 </body>
 </html>
