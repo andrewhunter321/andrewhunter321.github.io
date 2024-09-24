@@ -52,6 +52,34 @@ header nav ul li a:hover {
     text-shadow: 0 0 8px #f39c12;
 }
 
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 2em;
+        text-align: right;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    header nav ul li a {
+        font-size: 1.2em;
+    }
+}
+
 .section {
     margin: 40px auto;
     padding: 30px;
