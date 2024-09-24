@@ -356,3 +356,13 @@ footer .social-links a:hover {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}

@@ -1,4 +1,3 @@
-// Starry background code
 const canvas = document.getElementById("backgroundCanvas");
 const ctx = canvas.getContext("2d");
 let stars = [];
@@ -50,14 +49,13 @@ createStars(150);
 update();
 window.addEventListener("resize", resizeCanvas);
 
-// Scroll animations for project sections
 document.addEventListener("DOMContentLoaded", function() {
     const projects = document.querySelectorAll(".project");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log(entry.target); // Log the element to the console to ensure it's being observed
+                console.log(entry.target);
                 entry.target.classList.add("visible");
             }
         });
