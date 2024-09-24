@@ -1,0 +1,44 @@
+#menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #ddd;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#menu button, #menu input, #menu label {
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+.active {
+    background-color: #aaf;
+}
+#canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+#canvas {
+    border: 1px solid #000;
+}
+.unit-inputs {
+    display: flex;
+    align-items: center;
+}
+#backButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#backButton:hover {
+    background-color: #2980b9;
+}

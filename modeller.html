@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D to 3D Modeler</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="modeller.css">
+</head>
+<body>
+    <button id="backButton" onclick="history.back()">Back to Portfolio</button>
+
+    <div id="canvas-container">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <div id="menu">
+        <button id="rectangleButton">Add Rectangle</button>
+        <button id="circleButton">Add Circle</button>
+        <button id="triangleButton">Add Triangle</button>
+        <button id="lineButton">Draw Line</button>
+        <button id="convertBtn">Convert to 3D</button>
+        <button id="deleteButton">Delete Selected</button>
+        <button id="labelButton">Add Label</button>
+        <button id="toggleMeasurementsButton">Toggle Measurements</button>
+        <div class="unit-inputs">
+            <label for="unitInput">Unit:</label>
+            <input type="text" id="unitInput" placeholder="px" value="px">
+            <label for="scaleInput">Scale:</label>
+            <input type="number" id="scaleInput" placeholder="1" value="1">
+        </div>
+    </div>
+    
+    <div id="3d-container"></div>
+    <script src="modeller.js"></script>
+</body>
+</html>
