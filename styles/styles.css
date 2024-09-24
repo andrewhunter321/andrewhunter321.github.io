@@ -82,10 +82,10 @@ header nav ul li a:hover {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
-    margin-top: 40px;
 }
 
 .project {
@@ -134,7 +134,7 @@ header nav ul li a:hover {
 
 @media (max-width: 768px) {
     .projects-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 }
 
@@ -316,10 +316,10 @@ button[type="submit"]:hover {
     margin-top: 20px;
     text-align: center;
     border-radius: 5px;
-    animation: fadeIn 0.5s ease-in-out;
+    animation: popupFadeIn 0.5s ease-in-out;
 }
 
-@keyframes fadeIn {
+@keyframes popupFadeIn {
     from {
         opacity: 0;
         transform: translateY(10px);

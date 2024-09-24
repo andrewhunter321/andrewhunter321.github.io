@@ -7,6 +7,13 @@ function resizeCanvas() {
     canvas.height = window.innerHeight;
 }
 
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r},${g},${b})`;
+}
+
 function createStars(count) {
     for (let i = 0; i < count; i++) {
         stars.push({
@@ -14,6 +21,7 @@ function createStars(count) {
             y: Math.random() * canvas.height,
             radius: Math.random() * 2 + 0.5,
             speed: Math.random() * 0.5 + 0.2,
+            color: getRandomColor(),
         });
     }
 }
@@ -23,7 +31,7 @@ function drawStars() {
     for (let star of stars) {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = star.color;
         ctx.fill();
     }
 }
@@ -34,6 +42,7 @@ function animateStars() {
         if (star.y > canvas.height) {
             star.y = 0;
             star.x = Math.random() * canvas.width;
+            star.color = getRandomColor();
         }
     }
 }
