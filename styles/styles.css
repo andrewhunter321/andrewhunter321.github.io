@@ -366,3 +366,15 @@ ul {
 li {
     margin-bottom: 10px;
 }
+
+#future-projects a {
+    color: #3498db;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#future-projects a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
