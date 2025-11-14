@@ -133,7 +133,7 @@
         </main>
 
         <footer class="site-footer">
-            <p class="site-footer__copy">&copy; 2024 Andrew Hunter</p>
+            <p class="site-footer__copy">&copy; 2025 Andrew Hunter</p>
             <div class="site-footer__social">
                 <a href="https://github.com/andrewhunter321" target="_blank" rel="noopener noreferrer">
                     GitHub
@@ -148,17 +148,6 @@
 
     <script src="../scripts/script.js"></script>
     <script src="../scripts/main.js"></script>
-    <script>
-        // Mobile nav toggle
-        const navToggle = document.querySelector('.nav__toggle');
-        const navLinks = document.querySelector('.nav__links');
-
-        if (navToggle && navLinks) {
-            navToggle.addEventListener('click', () => {
-                const isOpen = navLinks.classList.toggle('nav__links--open');
-                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
-        }
-    </script>
+    <script src="../scripts/navigation.js"></script>
 </body>
 </html>

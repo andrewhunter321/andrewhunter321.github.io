@@ -210,6 +210,7 @@ body::before {
 .section {
     max-width: var(--max-width);
     margin: 0 auto;
+    margin-bottom: 2.75rem;
 }
 
 .hero {
@@ -376,7 +377,9 @@ body::before {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.8rem;
     margin-top: 2.25rem;
+    margin-bottom: 2.75rem;
 }
+
 
 .card {
     border-radius: var(--radius-xl);
