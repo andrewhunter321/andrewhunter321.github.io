@@ -3,106 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Andrew Hunter | Projects</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="icon" href="/assets/favicon.ico">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">About Me</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/experience">Experience</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="projects" class="section projects">
-        <h1>Projects</h1>
-        <p>Programming is also my hobby. Sometimes, I think of random things that would be a good challenge. Here is my progression of projects from first to last:</p>
-    
-        <div class="projects-grid">
-            <div class="project">
-                <h2>Noise2Notes</h2>
-                <p><strong>Stack:</strong> Python CLI</p>
-                <p>Using Google Colab, I utilized the Aubio, music21, and SoundFile libraries to convert an MP3 file to a MIDI output - which was then converted to notes.
-                    The origins came from my skill of relative pitch, and it was often a struggle to share my musical ideas to those who
-                    were less musically gifted. The main purpose of this is often I don't play music as it is written, and improvise instead.
-                    Instead of trying to remember what I'm playing, I thought it would be a better idea to record myself and have the next stage
-                    of music sharing done automatically.
-                </p>
-            </div>
-            <div class="arrow-down">&#x2193;</div>
-    
-            <div class="project">
-                <h2>Snake Game</h2>
-                <p><strong>Stack:</strong> Dart on Flutter, with an Ubuntu database server and PHP</p>
-                <p>I created this as part of a Mobile App and Cloud assignment for my Computing degree. It used Dart with Flutter for the front end,
-                    and PHP for the backend APIs to save the users score and authentication credentials. Alonside this, I created HTML pages
-                    alongisde PHPMyAdmin, to add levels of user restriction to allow easier development of the backend. At some stage, I would love to
-                    have this available as a downloadable Android APK.
-                </p>
-            </div>
-            <div class="arrow-down">&#x2193;</div>
-
-            <div class="project">
-                <h2>Floor Plan Modeller</h2>
-                <p><strong>Stack:</strong> JavaScript</p>
-                <p>During the summer, I wanted to build a shed. Frustrated with available floor plan modeling software, I decided to build my own. This was done
-                    fully in Javascript. The end goal of this is to integrate OpenAI to convert the 2D model into a 3D one.
-                </p>
-                <a href="modeller/">View this live!</a>
-            </div>
-            <div class="arrow-down">&#x2193;</div>
-
-            <div class="project">
-                <h2>Ulster Fades</h2>
-                <p><strong>Stack:</strong> Ruby on Rails with Javascript and an S3 Bucket</p>
-                <p>A friend of mine, a barber, was frustrated with subscription costs for booking software. I saw this as an oportunity to develop
-                    my skills in Ruby on Rails, and shortly after I had a very happy friend. I used Render to host this, alongside their
-                    cloud database capabilities. To keep costs low, I crafted everything from scratch. This will be developed long-term, recently
-                    I weaved JavaScript throughout it, and added AWS integration for an S3 bucket.
-                </p>
-                <a href="https://ulsterfades.co.uk/" target="_blank">View this live!</a>
-            </div>
-            <div class="arrow-down">&#x2193;</div>
-
-            <div class="project">
-                <h2>This Portfolio</h2>
-                <p><strong>Stack:</strong> HTML, JavaScript, and CSS - hosted on Github Pages</p>
-                <p>I thought it was finally time to create a static site for me to keep track of what stage of my career I am at.
-                    I also wanted a space to showcase what I'm developing. My solution was this site. I'll continue to keep this space
-                    up to date, and use it as a space to develop my skills on the front end.
-                </p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="future-projects" class="section future-projects">
-        <h2>Future Projects</h2>
-        <p>
-            Check this section to see what I'm currently working on, or what my plans are for the future! If you have some ideas, feel free to send them to me 
-            <a href="/contact">here</a>.
-        </p>
-        <ul>
-            <li><strong>Pharmaceutical prescription tracker & customer service app</strong></li>
-            <li><strong>Pharmaceutical stock system</strong></li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Andrew Hunter</p>
-        <div class="social-links">
-            <a href="https://github.com/andrewhunter321" target="_blank">GitHub</a> |
-            <a href="https://www.linkedin.com/in/andrew-hunter-3343b5b9" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
-
     <canvas id="backgroundCanvas"></canvas>
 
+    <div class="page-wrapper">
+        <header class="site-header">
+            <nav class="nav">
+                <a href="/" class="nav__logo" aria-label="Andrew Hunter Home">
+                    <span class="nav__logo-mark">AH</span>
+                    <span class="nav__logo-text">Andrew Hunter</span>
+                </a>
+
+                <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav__links">
+                    <li><a href="/" class="nav__link">About Me</a></li>
+                    <li><a href="/projects" class="nav__link nav__link--active">Projects</a></li>
+                    <li><a href="/experience" class="nav__link">Experience</a></li>
+                    <li><a href="/contact" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- PROJECTS HEADER -->
+            <section id="projects" class="section">
+                <div class="hero" style="margin-top: 1.1rem;">
+                    <div class="hero__content">
+                        <p class="hero__eyebrow">Selected Work</p>
+                        <h1 class="hero__title">Projects</h1>
+                        <p class="hero__subtitle">
+                            Programming is both my job and my hobby. I love picking up ideas that feel
+                            like a challenge and turning them into something real. Here’s a selection
+                            of projects that chart my journey from early experiments to more
+                            production-ready work.
+                        </p>
+
+                        <div class="hero__tags">
+                            <span class="tag">Ruby on Rails</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                    </div>
+
+                    <aside class="hero__card">
+                        <h2 class="hero__card-title">What I Like Building</h2>
+                        <ul class="hero__card-list">
+                            <li><span>Type</span><strong>Tools & real products</strong></li>
+                            <li><span>Focus</span><strong>UX for complex workflows</strong></li>
+                            <li><span>Style</span><strong>Clean, pragmatic, testable</strong></li>
+                            <li><span>Goal</span><strong>Ship things people use</strong></li>
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- PROJECTS GRID -->
+            <section class="section section--grid" aria-label="Project list">
+                <!-- Noise2Notes -->
+                <article class="card project-card">
+                    <header class="project-card__header">
+                        <h2 class="card__title">Noise2Notes</h2>
+                        <span class="tag">Python · CLI</span>
+                    </header>
+                    <p class="card__body">
+                        <strong>Noise2Notes</strong> is a Python CLI tool that converts an MP3
+                        recording into MIDI and then into readable music notation. It builds on
+                        libraries like <strong>Aubio</strong>, <strong>music21</strong> and
+                        <strong>SoundFile</strong>, originally prototyped in Google Colab.
+                    </p>
+                    <p class="card__body">
+                        The idea came from my relative pitch and the frustration of trying to
+                        share musical ideas with people who don’t read or improvise the same way.
+                        Instead of trying to remember every riff I play, I can record myself and
+                        let the tool generate the notes as a starting point for sharing and editing.
+                    </p>
+                </article>
+
+                <!-- Snake Game -->
+                <article class="card project-card">
+                    <header class="project-card__header">
+                        <h2 class="card__title">Snake Game</h2>
+                        <span class="tag">Flutter · PHP · MySQL</span>
+                    </header>
+                    <p class="card__body">
+                        This mobile <strong>Snake</strong> game was built for a
+                        <strong>Mobile App and Cloud</strong> assignment on my Computing degree.
+                        The front end uses <strong>Dart with Flutter</strong>, while the backend
+                        uses <strong>PHP</strong> APIs to handle authentication and score
+                        persistence against a MySQL database running on Ubuntu.
+                    </p>
+                    <p class="card__body">
+                        I also created supporting HTML/PHPMyAdmin views with user restrictions to
+                        make backend administration safer. Longer-term, I’d like to polish this and
+                        ship it as a downloadable Android APK.
+                    </p>
+                </article>
+
+                <!-- Floor Plan Modeller -->
+                <article class="card project-card">
+                    <header class="project-card__header">
+                        <h2 class="card__title">Floor Plan Modeller</h2>
+                        <span class="tag">JavaScript</span>
+                    </header>
+                    <p class="card__body">
+                        I wanted to build a shed and quickly discovered that most floor plan tools
+                        were either too clunky or too restrictive. So I wrote my own modelling tool
+                        in plain <strong>JavaScript</strong>.
+                    </p>
+                    <p class="card__body">
+                        The goal is to make it easy to sketch a 2D layout with accurate dimensions
+                        directly in the browser. A future iteration will integrate
+                        <strong>OpenAI</strong> to automatically suggest or generate a 3D model
+                        from the 2D plan.
+                    </p>
+                    <p class="card__body">
+                        <a href="modeller/" class="btn btn--ghost">View this live</a>
+                    </p>
+                </article>
+
+                <!-- Ulster Fades -->
+                <article class="card project-card">
+                    <header class="project-card__header">
+                        <h2 class="card__title">Ulster Fades</h2>
+                        <span class="tag">Ruby on Rails · JS · AWS S3</span>
+                    </header>
+                    <p class="card__body">
+                        A friend of mine (a barber) was frustrated with subscription costs for
+                        booking software. <strong>Ulster Fades</strong> is a bespoke booking
+                        platform I built using <strong>Ruby on Rails</strong> with plenty of
+                        JavaScript woven through the UI.
+                    </p>
+                    <p class="card__body">
+                        It’s hosted on <strong>Render</strong> with a managed database, and uses
+                        <strong>AWS S3</strong> for image storage to keep things flexible and cost
+                        effective. Everything from auth to scheduling was crafted from scratch with
+                        long-term maintainability in mind.
+                    </p>
+                    <p class="card__body">
+                        <a href="https://ulsterfades.co.uk/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                            Visit Ulster Fades
+                        </a>
+                    </p>
+                </article>
+
+                <!-- This Portfolio -->
+                <article class="card project-card">
+                    <header class="project-card__header">
+                        <h2 class="card__title">This Portfolio</h2>
+                        <span class="tag">HTML · CSS · JavaScript</span>
+                    </header>
+                    <p class="card__body">
+                        This site started as a simple static page on
+                        <strong>GitHub Pages</strong> and has evolved into a more considered
+                        portfolio focused on clarity, UX, and a modern look and feel.
+                    </p>
+                    <p class="card__body">
+                        I use it as a sandbox to experiment with layout, interaction, and visual
+                        design, while also keeping a living record of where I am in my career and
+                        what I’m building.
+                    </p>
+                </article>
+            </section>
+
+            <!-- FUTURE PROJECTS -->
+            <section id="future-projects" class="section" aria-label="Future projects">
+                <article class="card">
+                    <h2 class="card__title">What I want to build next</h2>
+                    <p class="card__body">
+                        I like shipping projects that sit close to real-world problems. A lot of my
+                        current ideas are driven by healthcare, pharmacy, and operational workflow
+                        challenges.
+                    </p>
+                    <p class="card__body">
+                        Some things on my radar:
+                    </p>
+                    <ul class="card__body" style="padding-left: 1.2rem; margin-top: 0.4rem;">
+                        <li><strong>Pharmaceutical prescription tracker &amp; customer service app</strong></li>
+                        <li><strong>Pharmaceutical stock management system</strong></li>
+                    </ul>
+                    <p class="card__body">
+                        Got an idea you think I’d enjoy building?
+                        <a href="/contact">Reach out here</a>.
+                    </p>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p class="site-footer__copy">&copy; 2024 Andrew Hunter</p>
+            <div class="site-footer__social">
+                <a href="https://github.com/andrewhunter321" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+                <span>·</span>
+                <a href="https://www.linkedin.com/in/andrew-hunter-3343b5b9" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </div>
+        </footer>
+    </div>
+
     <script src="../scripts/script.js"></script>
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav__toggle');
+        const navLinks = document.querySelector('.nav__links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('nav__links--open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        }
+    </script>
 </body>
 </html>

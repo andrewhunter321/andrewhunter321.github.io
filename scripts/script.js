@@ -1,6 +1,8 @@
 const canvas = document.getElementById("backgroundCanvas");
 const ctx = canvas.getContext("2d");
 let stars = [];
+let starSpeed = 0.5;  // Default speed
+let starVisibility = true;
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -15,18 +17,24 @@ function getRandomColor() {
 }
 
 function createStars(count) {
+    stars = [];  // Clear existing stars
     for (let i = 0; i < count; i++) {
         stars.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             radius: Math.random() * 2 + 0.5,
-            speed: Math.random() * 0.5 + 0.2,
+            speed: Math.random() * starSpeed + 0.2,
             color: getRandomColor(),
         });
     }
 }
 
 function drawStars() {
+    if (!starVisibility) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+    }
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let star of stars) {
         ctx.beginPath();
@@ -54,23 +62,14 @@ function update() {
 }
 
 resizeCanvas();
-createStars(150);
+createStars(150);  // Default 150 stars
 update();
 window.addEventListener("resize", resizeCanvas);
 
-document.addEventListener("DOMContentLoaded", function() {
-    const projects = document.querySelectorAll(".project");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                console.log(entry.target);
-                entry.target.classList.add("visible");
-            }
-        });
-    });
-
-    projects.forEach(project => {
-        observer.observe(project);
-    });
+// Listen for changes from the secret page
+document.addEventListener('updateStarSettings', (e) => {
+    const { starCount, starSpeed: newSpeed, starVisibility: visibility } = e.detail;
+    starSpeed = newSpeed;
+    starVisibility = visibility;
+    createStars(starCount);
 });

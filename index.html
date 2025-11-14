@@ -3,62 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Andrew Hunter | About Me</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" href="/assets/favicon.ico">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">About Me</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/experience">Experience</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="about" class="section about">
-        <h1>About Me</h1>
-        <p class="intro">
-            Hi! I’m <strong>Andrew Hunter</strong>, welcome to my portfolio site!
-        </p>
-        
-        <div class="about-section" id="whoami">
-            <h2>Who am I?</h2>
-            <ul>
-                <p>
-                    I'm a Junior Software Engineer based in county Armagh, Northern Ireland, with a special interest in Web and Mobile applications.
-                    My stack mainly consists of Ruby on Rails with Javascript, but you can occasionally find me promgramming
-                    Dart Flutter applications. I find it a blessing to be interested in computing in general, and you can often find
-                    me bringing random ideas to life through my computer.
-                </p>
-            </ul>
-        </div>
-
-        <div class="about-section" id="career">
-            <h2>My Computing Career</h2>
-            <ul>
-                <p>
-                    I'm currently pursuing a BSc in Computing for Industry through Open University. I took the apprenticeship route for this degree,
-                    and in October 2023 I landed myself a full time position at Trace First - an animal healthcare software company!
-                </p>
-            </ul>
-        </div>
-
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Andrew Hunter</p>
-        <div class="social-links">
-            <a href="https://github.com/andrewhunter321" target="_blank">GitHub</a> |
-            <a href="https://www.linkedin.com/in/andrew-hunter-3343b5b9" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
-
     <canvas id="backgroundCanvas"></canvas>
+
+    <div class="page-wrapper">
+        <header class="site-header">
+            <nav class="nav">
+                <a href="/" class="nav__logo" aria-label="Andrew Hunter Home">
+                    <span class="nav__logo-mark">AH</span>
+                    <span class="nav__logo-text">Andrew Hunter</span>
+                </a>
+
+                <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav__links">
+                    <li><a href="/" class="nav__link nav__link--active">About Me</a></li>
+                    <li><a href="/projects" class="nav__link">Projects</a></li>
+                    <li><a href="/experience" class="nav__link">Experience</a></li>
+                    <li><a href="/contact" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <section id="about" class="hero section">
+                <div class="hero__content">
+                    <p class="hero__eyebrow">
+                        Junior Software Engineer · Northern Ireland
+                    </p>
+                    <h1 class="hero__title">Andrew Hunter</h1>
+                    <p class="hero__subtitle">
+                        I build clean, pragmatic web and mobile experiences in
+                        <span class="highlight">Ruby on Rails</span>,
+                        <span class="highlight">JavaScript</span> and
+                        <span class="highlight">Flutter</span>.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="/projects" class="btn btn--primary">View Projects</a>
+                        <a href="/experience" class="btn btn--ghost">My Experience</a>
+                    </div>
+
+                    <div class="hero__tags">
+                        <span class="tag">Ruby on Rails</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React (JS)</span>
+                        <span class="tag">Flutter · Dart</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                <aside class="hero__card">
+                    <h2 class="hero__card-title">Currently</h2>
+                    <ul class="hero__card-list">
+                        <li><span>Role</span><strong>Junior Software Engineer</strong></li>
+                        <li><span>Company</span><strong>Trace First</strong></li>
+                        <li><span>Focus</span><strong>CoreOne for Labs (Rails & JS)</strong></li>
+                        <li><span>Degree</span><strong>First-Class Honours (BSc Computing for Industry)</strong></li>
+                    </ul>
+                </aside>
+            </section>
+
+            <!-- ABOUT GRID -->
+            <section class="section section--grid">
+                <article class="card">
+                    <h2 class="card__title">Who am I?</h2>
+                    <p class="card__body">
+                        I'm a Junior Software Engineer based in County Armagh, Northern Ireland, with
+                        a strong focus on building clean, maintainable web and mobile applications.
+                        My core stack is <strong>Ruby on Rails</strong> and <strong>JavaScript</strong>,
+                        and I also enjoy creating mobile experiences with <strong>Flutter</strong>.
+                    </p>
+                    <p class="card__body">
+                        I love turning ideas into real products. Whether it's internal tooling,
+                        experimental UI, or a random idea that pops into my head, I’m happiest
+                        when I'm building things people actually use.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h2 class="card__title">My Computing Journey</h2>
+                    <p class="card__body">
+                        I completed a <strong>BSc in Computing for Industry</strong> with
+                        <strong>First-Class Honours</strong> through the Open University.
+                        I originally joined <strong>Trace First</strong> as an apprentice,
+                        where I trained directly in a commercial engineering environment.
+                    </p>
+                    <p class="card__body">
+                        After completing my apprenticeship and graduating, I was re-employed
+                        by Trace First as a full-time Software Engineer. Most of my work centres
+                        around modernising and extending <strong>CoreOne for Labs</strong>,
+                        a large-scale Rails application used across veterinary labs.
+                    </p>
+                    <p class="card__body">
+                        I'm passionate about full-stack development with Rails and JavaScript, and I
+                        love taking an idea from concept to a polished, functioning feature that feels
+                        fast and intuitive.                                              
+                    </p>                    
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p class="site-footer__copy">&copy; 2024 Andrew Hunter</p>
+            <div class="site-footer__social">
+                <a href="https://github.com/andrewhunter321" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+                <span>·</span>
+                <a href="https://www.linkedin.com/in/andrew-hunter-3343b5b9" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </div>
+        </footer>
+    </div>
+
     <script src="scripts/script.js"></script>
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav__toggle');
+        const navLinks = document.querySelector('.nav__links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('nav__links--open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        }
+    </script>
 </body>
 </html>

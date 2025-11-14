@@ -3,68 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Andrew Hunter | Contact</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <script src="https://kit.fontawesome.com/e50cd49057.js" crossorigin="anonymous"></script></head>
     <link rel="icon" href="/assets/favicon.ico">
+    <script src="https://kit.fontawesome.com/e50cd49057.js" crossorigin="anonymous"></script>
+</head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">About Me</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/experience">Experience</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="contact" class="section contact">
-        <h1>Contact Me</h1>
-        <p>If you'd like to get in touch, feel free to contact me using the form below or reach out via these links:</p>
-
-        <div class="contact-info">
-            <p><strong><i class="fas fa-envelope"></i></strong> <a href="mailto:andrewhunta72@gmail.com">EMAIL</a></p>
-            <p><strong><i class="fab fa-github"></i></strong> <a href="https://github.com/andrewhunter321" target="_blank">GITHUB</a></p>
-            <p><strong><i class="fab fa-linkedin"></i></strong> <a href="https://www.linkedin.com/in/andrew-hunter-3343b5b9" target="_blank">LINKEDIN</a></p>
-        </div>        
-
-        <form class="contact-form" id="contactForm">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit">Send Message</button>
-        </form>
-
-        <div id="popupMessage" style="display: none;">
-            Thank you for your message! I'll get back to you shortly.
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Andrew Hunter</p>
-        <div class="social-links">
-            <a href="https://github.com/andrewhunter321" target="_blank">GitHub</a> |
-            <a href="https://www.linkedin.com/in/andrew-hunter-3343b5b9" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
-
     <canvas id="backgroundCanvas"></canvas>
-    <script src="../scripts/script.js"></script>
 
+    <div class="page-wrapper">
+        <header class="site-header">
+            <nav class="nav">
+                <a href="/" class="nav__logo" aria-label="Andrew Hunter Home">
+                    <span class="nav__logo-mark">AH</span>
+                    <span class="nav__logo-text">Andrew Hunter</span>
+                </a>
+
+                <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav__links">
+                    <li><a href="/" class="nav__link">About Me</a></li>
+                    <li><a href="/projects" class="nav__link">Projects</a></li>
+                    <li><a href="/experience" class="nav__link">Experience</a></li>
+                    <li><a href="/contact" class="nav__link nav__link--active">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- CONTACT HERO -->
+            <section id="contact" class="section">
+                <div class="hero" style="margin-top: 1.1rem;">
+                    <div class="hero__content">
+                        <p class="hero__eyebrow">Get in touch</p>
+                        <h1 class="hero__title">Contact</h1>
+                        <p class="hero__subtitle">
+                            Whether it’s about work, a project idea, or just a question about
+                            how something was built, I’m always happy to chat.
+                            Drop me an email directly or send a quick message using the form.
+                        </p>
+                    </div>
+
+                    <aside class="hero__card">
+                        <h2 class="hero__card-title">Say hello</h2>
+                        <ul class="hero__card-list">
+                            <li>
+                                <span><i class="fa-solid fa-envelope"></i></span>
+                                <strong>
+                                    <a href="mailto:andrewhunta72@gmail.com">andrewhunta72@gmail.com</a>
+                                </strong>
+                            </li>
+                            <li>
+                                <span><i class="fa-brands fa-github"></i></span>
+                                <strong>
+                                    <a href="https://github.com/andrewhunter321" target="_blank" rel="noopener noreferrer">
+                                        github.com/andrewhunter321
+                                    </a>
+                                </strong>
+                            </li>
+                            <li>
+                                <span><i class="fa-brands fa-linkedin"></i></span>
+                                <strong>
+                                    <a href="https://www.linkedin.com/in/andrew-hunter-3343b5b9"
+                                       target="_blank" rel="noopener noreferrer">
+                                        LinkedIn Profile
+                                    </a>
+                                </strong>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- CONTACT FORM CARD -->
+            <section class="section" aria-label="Contact form">
+                <article class="card contact-card">
+                    <h2 class="card__title">Send me a message</h2>
+                    <p class="card__body">
+                        Fill in the form below and I’ll get back to you as soon as I can.
+                    </p>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                placeholder="Your name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                placeholder="you@example.com"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                required
+                                placeholder="What would you like to chat about?"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <div id="popupMessage" class="contact-popup" style="display: none;">
+                        Thank you for your message! I'll get back to you shortly.
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p class="site-footer__copy">&copy; 2024 Andrew Hunter</p>
+            <div class="site-footer__social">
+                <a href="https://github.com/andrewhunter321" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+                <span>·</span>
+                <a href="https://www.linkedin.com/in/andrew-hunter-3343b5b9" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../scripts/script.js"></script>
     <script src="../scripts/main.js"></script>
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav__toggle');
+        const navLinks = document.querySelector('.nav__links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('nav__links--open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        }
+    </script>
 </body>
 </html>
