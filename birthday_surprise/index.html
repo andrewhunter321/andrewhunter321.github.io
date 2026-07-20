@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0714" />
+  <meta name="description" content="A private birthday surprise, made with love." />
+  <title>Top Secret Birthday Mission ♥</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="locked release-gated">
+
+  <section class="release-gate" id="releaseGate" aria-labelledby="releaseGateTitle">
+    <div class="release-gate__noise" aria-hidden="true"></div>
+    <div class="release-gate__aurora release-gate__aurora--one" aria-hidden="true"></div>
+    <div class="release-gate__aurora release-gate__aurora--two" aria-hidden="true"></div>
+
+    <div class="release-gate__stars" id="releaseGateStars" aria-hidden="true"></div>
+
+    <div class="release-gate__content">
+      <p class="release-gate__eyebrow">A birthday surprise is waiting</p>
+
+      <button class="release-lock" id="releaseLockButton" type="button" aria-describedby="releaseGateStatus">
+        <span class="release-lock__rings" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+        <span class="release-lock__shackle" aria-hidden="true"></span>
+        <span class="release-lock__body" aria-hidden="true">
+          <b>♥</b>
+        </span>
+        <span class="release-lock__sparkles" aria-hidden="true">
+          <i>✦</i><i>✦</i><i>✦</i><i>✦</i>
+        </span>
+      </button>
+
+      <h1 id="releaseGateTitle">Not quite yet…</h1>
+      <p class="release-gate__intro">
+        Something made especially for you is locked inside.
+      </p>
+
+      <div class="release-countdown" id="releaseCountdown" aria-live="polite">
+        <div><strong id="releaseDays">00</strong><span>days</span></div>
+        <div><strong id="releaseHours">00</strong><span>hours</span></div>
+        <div><strong id="releaseMinutes">00</strong><span>minutes</span></div>
+        <div><strong id="releaseSeconds">00</strong><span>seconds</span></div>
+      </div>
+
+      <div class="release-date-card">
+        <span>Unlocks</span>
+        <strong>29 August 2026</strong>
+        <small>00:00 · UK time</small>
+      </div>
+
+      <button class="release-gate__button" id="tryReleaseLock" type="button">
+        Try the lock
+      </button>
+
+      <p class="release-gate__status" id="releaseGateStatus">
+        The surprise will open automatically when the countdown reaches zero.
+      </p>
+    </div>
+
+    <div class="release-gate__curtain release-gate__curtain--left" aria-hidden="true"></div>
+    <div class="release-gate__curtain release-gate__curtain--right" aria-hidden="true"></div>
+  </section>
+
+  <canvas id="fxCanvas" aria-hidden="true"></canvas>
+  <div id="stars" class="stars" aria-hidden="true"></div>
+  <div id="aurora" class="aurora" aria-hidden="true"></div>
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+  <div id="floatingLayer" class="floating-layer" aria-hidden="true"></div>
+
+  <div class="top-progress" aria-hidden="true"><span id="topProgress"></span></div>
+
+  <button class="sound-control" id="soundControl" type="button" aria-pressed="true">
+    <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="sound-text">Sound on</span>
+  </button>
+
+  <main>
+    <section class="scene active intro-scene" id="sceneIntro" data-progress="6" aria-labelledby="introTitle">
+      <div class="scanlines" aria-hidden="true"></div>
+      <div class="orbit-system" aria-hidden="true">
+        <span class="orbit orbit-a"></span>
+        <span class="orbit orbit-b"></span>
+        <span class="orbit orbit-c"></span>
+        <span class="orbit-center">♥</span>
+      </div>
+
+      <div class="scene-copy intro-copy">
+        <p class="kicker pale">Birthday file · 02.09.2026</p>
+        <h1 id="introTitle"><span>TOP SECRET</span><br />FOR YOUR EYES ONLY</h1>
+        <p class="lead pale-copy">A classified birthday operation has been prepared for one very special person.</p>
+
+        <button class="hero-button magnetic" id="activateMission" type="button">
+          <span>Activate mission</span><b aria-hidden="true">→</b>
+        </button>
+
+        <div class="security-strip" aria-hidden="true">
+          <span>IDENTITY: BIRTHDAY GIRL</span>
+          <span>ACCESS: GRANTED</span>
+          <span>STATUS: VERY LOVED</span>
+        </div>
+      </div>
+
+      <div class="corner-code" aria-hidden="true">AH/0209/♥</div>
+    </section>
+
+    <section class="scene key-scene" id="sceneKeys" data-progress="18" aria-labelledby="keysTitle">
+      <div class="scene-copy compact">
+        <p class="kicker pale">Security check</p>
+        <h2 id="keysTitle">Choose the key to unlock your surprise.</h2>
+        <p class="pale-copy">Only one is meant for you. Probably.</p>
+      </div>
+
+      <div class="key-vault" id="keyVault">
+        <button class="mystery-key" type="button" data-key="moon" aria-label="Choose the moon key">
+          <span class="key-top">☾</span><span class="key-shaft"></span><span class="key-teeth"></span>
+          <small>Moon</small>
+        </button>
+        <button class="mystery-key" type="button" data-key="heart" aria-label="Choose the heart key">
+          <span class="key-top">♥</span><span class="key-shaft"></span><span class="key-teeth"></span>
+          <small>Heart</small>
+        </button>
+        <button class="mystery-key" type="button" data-key="star" aria-label="Choose the star key">
+          <span class="key-top">✦</span><span class="key-shaft"></span><span class="key-teeth"></span>
+          <small>Star</small>
+        </button>
+      </div>
+
+      <div class="vault-door" id="vaultDoor" aria-hidden="true">
+        <div class="vault-rim"><span class="vault-wheel"><i></i><i></i><i></i><i></i><b>♥</b></span></div>
+      </div>
+      <p class="vault-status" id="vaultStatus" aria-live="polite">Awaiting your choice…</p>
+    </section>
+
+    <section class="scene heart-game-scene" id="sceneHeartGame" data-progress="30" aria-labelledby="heartGameTitle">
+      <div class="scene-copy compact game-copy">
+        <p class="kicker pale">Love-powered security</p>
+        <h2 id="heartGameTitle">Catch five hearts to continue.</h2>
+        <p class="pale-copy">They are surprisingly slippery.</p>
+        <div class="heart-score"><strong id="heartScore">0</strong><span>/ 5</span></div>
+      </div>
+      <div class="heart-arena" id="heartArena" aria-label="Catch the floating hearts"></div>
+    </section>
+
+    <section class="scene clue-scene" id="sceneClues" data-progress="43" aria-labelledby="cluesTitle">
+      <div class="scene-copy compact">
+        <p class="kicker pale">Encrypted hints</p>
+        <h2 id="cluesTitle">Four clues. Still no spoilers.</h2>
+      </div>
+
+      <div class="clue-machine">
+        <div class="clue-card active" data-clue="0">
+          <div class="clue-symbol">03</div>
+          <p class="clue-label">Clue one</p>
+          <h3>Keep three days free.</h3>
+          <p>Saturday, Sunday and Monday. No work. No rushing. No ordinary weekend.</p>
+        </div>
+        <div class="clue-card" data-clue="1">
+          <div class="clue-symbol">🧳</div>
+          <p class="clue-label">Clue two</p>
+          <h3>Pack a small suitcase.</h3>
+          <p>Two nights away, with something comfortable and something nice for dinner.</p>
+        </div>
+        <div class="clue-card" data-clue="2">
+          <div class="clue-symbol">♛</div>
+          <p class="clue-label">Clue three</p>
+          <h3>We are sleeping somewhere special.</h3>
+          <p>A suite, a king-size bed and the heart of an old city outside the door.</p>
+        </div>
+        <div class="clue-card" data-clue="3">
+          <div class="clue-symbol">♥</div>
+          <p class="clue-label">Final clue</p>
+          <h3>It was chosen because it feels romantic.</h3>
+          <p>Canals, cobbled streets, candlelit dinners and too much chocolate.</p>
+        </div>
+      </div>
+
+      <div class="clue-nav">
+        <div class="clue-dots" id="clueDots"><i class="active"></i><i></i><i></i><i></i></div>
+        <button class="hero-button compact-button magnetic" id="nextClue" type="button"><span>Decrypt next clue</span><b>→</b></button>
+      </div>
+    </section>
+
+    <section class="scene wish-scene" id="sceneWish" data-progress="55" aria-labelledby="wishTitle">
+      <div class="scene-copy compact">
+        <p class="kicker pale">Birthday protocol</p>
+        <h2 id="wishTitle">No surprise is official without a wish.</h2>
+        <p class="pale-copy">Press and hold until the candle goes out.</p>
+      </div>
+
+      <div class="cake-world" id="cakeWorld" aria-hidden="true">
+        <div class="cake-stars"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="smoke"><i></i><i></i><i></i></div>
+        <div class="flame"></div>
+        <div class="wick"></div>
+        <div class="candle"><span></span><span></span><span></span></div>
+        <div class="cake-top"></div>
+        <div class="cake-body"><span class="drip d1"></span><span class="drip d2"></span><span class="drip d3"></span><b>23</b></div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <button class="hold-to-wish" id="wishButton" type="button">
+        <span class="hold-ring"></span>
+        <span class="hold-text"><strong>Press & hold</strong><small>Make it a good one</small></span>
+      </button>
+    </section>
+
+    <section class="scene scratch-scene" id="sceneScratch" data-progress="66" aria-labelledby="scratchTitle">
+      <div class="scene-copy compact">
+        <p class="kicker pale">One last barrier</p>
+        <h2 id="scratchTitle">Scratch to reveal what you need.</h2>
+        <p class="pale-copy">Use your finger or mouse.</p>
+      </div>
+
+      <div class="scratch-card-wrap">
+        <div class="scratch-message">
+          <span>PACK YOUR</span>
+          <strong>PASSPORT</strong>
+          <small>and something nice for dinner ♥</small>
+        </div>
+        <canvas id="scratchCanvas" width="760" height="360" aria-label="Scratch card"></canvas>
+      </div>
+      <p class="scratch-percent" id="scratchPercent">0% revealed</p>
+    </section>
+
+    <section class="scene envelope-scene" id="sceneEnvelope" data-progress="77" aria-labelledby="envelopeTitle">
+      <div class="scene-copy compact">
+        <p class="kicker pale">The final seal</p>
+        <h2 id="envelopeTitle">Now open the actual present.</h2>
+      </div>
+
+      <button class="grand-envelope magnetic" id="grandEnvelope" type="button" aria-label="Open the birthday envelope">
+        <span class="env-shadow"></span>
+        <span class="env-back"></span>
+        <span class="env-letter">
+          <span class="postmark">AH</span>
+          <span class="paper-line l1"></span><span class="paper-line l2"></span><span class="paper-line l3"></span>
+          <strong>For you</strong>
+          <span class="paper-heart">♥</span>
+        </span>
+        <span class="env-front"></span>
+        <span class="env-flap"></span>
+        <span class="env-seal">♥</span>
+      </button>
+
+      <button class="ghost-link" id="breakSeal" type="button">Break the seal</button>
+    </section>
+
+    <section class="scene reveal-scene" id="sceneReveal" data-progress="90" aria-labelledby="revealTitle">
+      <div class="reveal-sky" aria-hidden="true"><span class="moon"></span><i class="cloud c1"></i><i class="cloud c2"></i></div>
+      <svg class="city-line" viewBox="0 0 1400 520" role="img" aria-label="Animated old European city skyline beside a canal">
+        <path d="M0 425 C170 388 320 452 500 415 S880 392 1400 427" class="draw water"/>
+        <path d="M35 400 L35 300 L120 300 L120 400 M50 300 L50 265 L105 265 L105 300" class="draw"/>
+        <path d="M155 400 L155 280 L250 280 L250 400 M175 280 L203 240 L232 280" class="draw"/>
+        <path d="M320 400 L320 180 L390 180 L390 400 M334 180 L334 118 L376 118 L376 180 M344 118 L355 42 L366 118 M334 245 L376 245 M334 300 L376 300" class="draw tower"/>
+        <path d="M438 400 L438 292 L530 292 L530 400 M458 292 L483 255 L510 292" class="draw"/>
+        <path d="M575 400 C620 330 720 330 770 400 M580 400 L765 400" class="draw bridge"/>
+        <path d="M810 400 L810 270 L900 270 L900 400 M830 270 L855 230 L880 270" class="draw"/>
+        <path d="M945 400 L945 300 L1045 300 L1045 400 M965 300 L965 262 L1025 262 L1025 300" class="draw"/>
+        <path d="M1090 400 L1090 250 L1185 250 L1185 400 M1110 250 L1138 212 L1165 250" class="draw"/>
+        <path d="M1230 400 L1230 315 L1360 315 L1360 400 M1260 315 L1295 275 L1330 315" class="draw"/>
+        <path d="M355 430 L355 492 M483 432 L483 478 M855 430 L855 495 M1138 432 L1138 490" class="draw reflection"/>
+      </svg>
+
+      <div class="reveal-copy">
+        <p class="kicker">5–7 September 2026</p>
+        <p class="reveal-prefix">For your birthday, we are going to</p>
+        <h2 id="revealTitle" class="city-name" aria-label="Bruges"><span>B</span><span>R</span><span>U</span><span>G</span><span>E</span><span>S</span></h2>
+        <p class="reveal-sub">A romantic weekend of canals, chocolate, old streets and us.</p>
+
+        <div class="boarding-pass" aria-label="Birthday boarding pass">
+          <div><small>Passenger</small><strong>Birthday girl</strong></div>
+          <div class="route"><span>DUB</span><i></i><b>✈</b><i></i><span>BRU</span></div>
+          <div><small>Outbound</small><strong>FR1452 · 14:00</strong></div>
+          <div><small>Return</small><strong>FR1453 · 20:00</strong></div>
+          <div><small>Final stop</small><strong>Bruges ♥</strong></div>
+        </div>
+
+        <button class="hero-button reveal-button magnetic" id="enterAdventure" type="button"><span>Enter our adventure</span><b>↓</b></button>
+      </div>
+    </section>
+
+    <div class="trip-site" id="tripSite">
+      <header class="trip-nav" id="tripNav">
+        <a href="#tripHome" class="brand">A ♥ B</a>
+        <nav>
+          <a href="#countdown">Countdown</a>
+          <a href="#map">Journey</a>
+          <a href="#itinerary">Itinerary</a>
+          <a href="#surpriseWheel">Fun</a>
+        </nav>
+      </header>
+
+      <section class="trip-home scroll-reveal" id="tripHome">
+        <div class="parallax-heart ph1" aria-hidden="true">♥</div><div class="parallax-heart ph2" aria-hidden="true">✦</div><div class="parallax-heart ph3" aria-hidden="true">♥</div>
+        <div class="hero-polaroid polaroid-left" aria-hidden="true"><span>CANALS</span></div>
+        <div class="hero-polaroid polaroid-right" aria-hidden="true"><span>CHOCOLATE</span></div>
+
+        <div class="trip-home-copy">
+          <p class="kicker">Happy birthday</p>
+          <h2>Pack a small suitcase…</h2>
+          <p class="large-copy">From Saturday 5 September to Monday 7 September, we’ll wander beside canals, climb the Belfry, drink Belgian beer, eat far too much chocolate and stay right in the heart of the old city.</p>
+          <div class="flight-cards" aria-label="Our flights">
+            <article>
+              <span>OUTBOUND · 05 SEPTEMBER</span>
+              <strong>FR1452</strong>
+              <p>Dublin → Brussels</p>
+              <time datetime="2026-09-05T14:00:00+01:00">Departs 14:00</time>
+            </article>
+            <article>
+              <span>HOME · 07 SEPTEMBER</span>
+              <strong>FR1453</strong>
+              <p>Brussels → Dublin</p>
+              <time datetime="2026-09-07T20:00:00+02:00">Departs 20:00</time>
+            </article>
+          </div>
+          <p class="signature">Love, Andrew x</p>
+        </div>
+      </section>
+
+      <section class="hotel-section scroll-reveal" aria-labelledby="hotelTitle">
+        <div class="hotel-keycard tilt" id="hotelKeycard" tabindex="0" role="button" aria-label="Flip the hotel key card">
+          <div class="keycard-face keycard-front">
+            <span class="keycard-chip"></span>
+            <small>Your room key</small>
+            <strong>Tap to reveal</strong>
+            <span class="mini-heart">♥</span>
+          </div>
+          <div class="keycard-face keycard-back">
+            <small>Our home for the weekend</small>
+            <h2 id="hotelTitle">Crowne Plaza Brugge</h2>
+            <p>Junior King Suite · Burg Square · Two nights</p>
+            <div class="stars-row">✦ ✦ ✦ ✦</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="countdown-section scroll-reveal" id="countdown" aria-labelledby="countdownTitle">
+        <div class="section-heading">
+          <p class="kicker">The countdown is on</p>
+          <h2 id="countdownTitle">Until Bruges begins</h2>
+        </div>
+        <div class="countdown-grid">
+          <div><strong id="days">00</strong><span>days</span></div>
+          <div><strong id="hours">00</strong><span>hours</span></div>
+          <div><strong id="minutes">00</strong><span>minutes</span></div>
+          <div><strong id="seconds">00</strong><span>seconds</span></div>
+        </div>
+        <button class="calendar-button" id="calendarButton" type="button">Add a burst of excitement ✦</button>
+      </section>
+
+      <section class="map-section scroll-reveal" id="map" aria-labelledby="mapTitle">
+        <div class="section-heading">
+          <p class="kicker">Our route</p>
+          <h2 id="mapTitle">From runway to romance</h2>
+          <p>Press play to watch our journey unfold.</p>
+        </div>
+
+        <div class="travel-map" id="travelMap">
+          <svg viewBox="0 0 1100 520" aria-label="Animated journey from Dublin to Brussels and onward to Bruges">
+            <defs>
+              <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path class="map-land ireland" d="M58 210 C75 135 160 95 228 130 C276 155 275 248 222 306 C170 363 78 333 58 270 C51 249 51 228 58 210Z"/>
+            <path class="map-land belgium" d="M445 115 C590 58 790 92 930 180 C1025 240 1030 365 921 414 C785 476 606 424 500 363 C409 311 368 175 445 115Z"/>
+            <path class="flight-line" id="flightPath" d="M160 245 C280 112 392 97 520 190"/>
+            <path class="route-line" id="routePath" d="M520 190 C645 230 760 285 900 330"/>
+            <circle class="city-dot" cx="160" cy="245" r="12"/>
+            <circle class="city-dot" cx="520" cy="190" r="12"/>
+            <circle class="city-dot" cx="900" cy="330" r="12"/>
+            <text x="118" y="214">Dublin</text>
+            <text x="460" y="158">Brussels Airport</text>
+            <text x="866" y="298">Bruges</text>
+            <g class="plane-marker" id="planeMarker" transform="translate(160 245)"><circle r="25"/><text x="-14" y="9">✈</text></g>
+            <g class="train-marker" id="trainMarker" transform="translate(520 190)"><circle r="25"/><text x="-14" y="9">🚆</text></g>
+          </svg>
+          <div class="map-stops">
+            <div><span>05 SEP · 14:00</span><strong>FR1452 from Dublin</strong></div>
+            <div><span>AFTER LANDING</span><strong>Train to Bruges</strong></div>
+            <div><span>THAT EVENING</span><strong>Junior King Suite</strong></div>
+            <div><span>07 SEP · 20:00</span><strong>FR1453 home</strong></div>
+          </div>
+          <button class="hero-button map-play magnetic" id="mapPlay" type="button"><span>Play our journey</span><b>▶</b></button>
+        </div>
+      </section>
+
+      <section class="passport-section scroll-reveal" aria-labelledby="passportTitle">
+        <div class="section-heading">
+          <p class="kicker">Official documentation</p>
+          <h2 id="passportTitle">Stamp our birthday passport</h2>
+        </div>
+        <button class="passport" id="passport" type="button">
+          <span class="passport-cover"><i>✦</i><strong>PASSPORT</strong><small>BIRTHDAY ADVENTURES</small></span>
+          <span class="passport-page">
+            <b>DESTINATION: BRUGES</b>
+            <i class="stamp" id="passportStamp">05 SEP 2026<br />APPROVED ♥</i>
+            <small>Tap to stamp</small>
+          </span>
+        </button>
+      </section>
+
+      <section class="itinerary-section scroll-reveal" id="itinerary" aria-labelledby="itineraryTitle">
+        <div class="section-heading">
+          <p class="kicker">Three days, one brilliant weekend</p>
+          <h2 id="itineraryTitle">Our itinerary</h2>
+          <p>Tap each day to unfold it.</p>
+        </div>
+
+        <div class="day-tabs" role="tablist" aria-label="Trip days">
+          <button class="day-tab active" data-day="day1" aria-selected="true" type="button"><span>Day 1</span><strong>Arrival</strong><small>Saturday</small></button>
+          <button class="day-tab" data-day="day2" aria-selected="false" type="button"><span>Day 2</span><strong>Birthday day</strong><small>Sunday</small></button>
+          <button class="day-tab" data-day="day3" aria-selected="false" type="button"><span>Day 3</span><strong>One last wander</strong><small>Monday</small></button>
+        </div>
+
+        <article class="day-panel active" id="day1">
+          <div class="day-heading"><span>01</span><div><p class="kicker">Saturday 5 September</p><h3>Arrival & Bruges by night</h3><p>A gentle first evening with no rushing.</p></div></div>
+          <ol class="timeline">
+            <li><time>14:00</time><div><h4>FR1452: Dublin → Brussels</h4><p>Our birthday adventure officially begins at Dublin Airport.</p></div></li>
+            <li><time>19:00–19:30</time><div><h4>Train to Bruges</h4><p>About 90 minutes through Belgium, then a short taxi.</p></div></li>
+            <li><time>21:00</time><div><h4>Check into our Junior King Suite</h4><p>Drop the cases and take in Burg Square.</p></div></li>
+            <li><time>21:30</time><div><h4>Belgian food & a first drink</h4><p>Something easy nearby, depending on our arrival.</p></div></li>
+            <li><time>22:15</time><div><h4>Moonlit first walk</h4><p>Burg Square → Rozenhoedkaai → the canals → Markt.</p></div></li>
+          </ol>
+        </article>
+
+        <article class="day-panel" id="day2" hidden>
+          <div class="day-heading"><span>02</span><div><p class="kicker">Sunday 6 September</p><h3>The main birthday day</h3><p>Bruges at its most beautiful.</p></div></div>
+          <ol class="timeline">
+            <li><time>08:00</time><div><h4>Breakfast in the hotel</h4><p>A slow start before the city wakes up.</p></div></li>
+            <li><time>09:00</time><div><h4>Climb the Belfry</h4><p>366 steps to one of the best views in Bruges.</p><button class="hint-button" data-message="Chocolate reward immediately afterwards. Promise." type="button">Why so early?</button></div></li>
+            <li><time>10:30</time><div><h4>Burg Square & the Basilica</h4><p>Medieval buildings directly beside our hotel.</p></div></li>
+            <li><time>11:40</time><div><h4>Canal boat trip</h4><p>Thirty minutes drifting beneath bridges and hidden gardens.</p></div></li>
+            <li><time>12:25</time><div><h4>Groeninge Museum</h4><p>A short visit for Flemish art.</p></div></li>
+            <li><time>13:45</time><div><h4>Lunch near Walplein</h4><p>Boniface Bridge and a light Belgian lunch.</p></div></li>
+            <li><time>15:15</time><div><h4>De Halve Maan brewery</h4><p>A brewery tour and a Brugse Zot where it is made.</p></div></li>
+            <li><time>16:15</time><div><h4>Beguinage & Lake of Love</h4><p>A quieter romantic walk through one of the prettiest areas.</p></div></li>
+            <li class="special"><time>19:30</time><div><small>BIRTHDAY DINNER</small><h4>Le Mystique</h4><p>A romantic tasting-menu dinner to finish the day properly.</p><button class="hint-button" data-message="Dress up a little. This is the special one ♥" type="button">Reveal a hint</button></div></li>
+            <li><time>22:00</time><div><h4>Bruges after dark</h4><p>One last walk past the Markt and Rozenhoedkaai.</p></div></li>
+          </ol>
+        </article>
+
+        <article class="day-panel" id="day3" hidden>
+          <div class="day-heading"><span>03</span><div><p class="kicker">Monday 7 September</p><h3>One last wander</h3><p>Chocolate, canals and a relaxed goodbye.</p></div></div>
+          <ol class="timeline">
+            <li><time>08:00</time><div><h4>Breakfast</h4><p>Then out early for the peaceful side of Bruges.</p></div></li>
+            <li><time>09:00</time><div><h4>Canals & windmills walk</h4><p>Jan van Eyckplein, Spiegelrei, Sint-Annarei and Kruisvest.</p></div></li>
+            <li><time>10:40</time><div><h4>Check out</h4><p>Leave the bags at the hotel while we keep exploring.</p></div></li>
+            <li><time>11:00</time><div><h4>Choco-Story</h4><p>The chocolate museum, then buying far too much chocolate.</p></div></li>
+            <li><time>12:30</time><div><h4>Final Belgian lunch</h4><p>Fries, waffles or whatever we somehow have not eaten yet.</p></div></li>
+            <li><time>13:45</time><div><h4>Horse-drawn carriage</h4><p>A final romantic circuit through the old city.</p></div></li>
+            <li><time>20:00</time><div><h4>FR1453: Brussels → Dublin</h4><p>Our flight home after one final day in Bruges.</p></div></li>
+          </ol>
+        </article>
+      </section>
+
+      <section class="wheel-section scroll-reveal" id="surpriseWheel" aria-labelledby="wheelTitle">
+        <div class="section-heading">
+          <p class="kicker">Completely unnecessary bonus feature</p>
+          <h2 id="wheelTitle">Spin the Bruges fun wheel</h2>
+          <p>It decides one extra thing we absolutely have to do.</p>
+        </div>
+        <div class="wheel-wrap">
+          <div class="wheel-pointer">▼</div>
+          <div class="fun-wheel" id="funWheel">
+            <span style="--i:0"><b>WAFFLE</b></span>
+            <span style="--i:1"><b>CANAL PIC</b></span>
+            <span style="--i:2"><b>BEER</b></span>
+            <span style="--i:3"><b>CHOCOLATE</b></span>
+            <span style="--i:4"><b>KISS</b></span>
+            <span style="--i:5"><b>BOAT</b></span>
+            <span style="--i:6"><b>SOUVENIR</b></span>
+            <span style="--i:7"><b>COCKTAIL</b></span>
+          </div>
+          <button class="hero-button wheel-button magnetic" id="spinWheel" type="button"><span>Spin it</span><b>↻</b></button>
+        </div>
+        <p class="wheel-result" id="wheelResult" aria-live="polite"></p>
+      </section>
+
+      <section class="photo-section scroll-reveal" aria-labelledby="photoTitle">
+        <div class="section-heading"><p class="kicker">Future memories</p><h2 id="photoTitle">Photos we have not taken yet</h2></div>
+        <div class="polaroid-grid">
+          <article class="future-photo tilt"><div class="photo-art canal-art"><span></span><i></i></div><p>Us by the canals</p></article>
+          <article class="future-photo tilt"><div class="photo-art waffle-art">🧇</div><p>The inevitable waffle photo</p></article>
+          <article class="future-photo tilt"><div class="photo-art night-art"><span>♥</span></div><p>Bruges after dark</p></article>
+          <article class="future-photo tilt"><div class="photo-art cheers-art">🥂</div><p>The birthday toast</p></article>
+        </div>
+      </section>
+
+      <section class="finale-section scroll-reveal" aria-labelledby="finalTitle">
+        <div class="finale-card">
+          <div class="pulse-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+          <button class="final-seal" id="secretSeal" type="button" aria-label="Tap this A seal five times to unlock a secret">A</button>
+          <p class="kicker pale">5–7 September 2026</p>
+          <h2 id="finalTitle">Happy birthday, beautiful.</h2>
+          <p>I cannot wait to explore Bruges with you.</p>
+          <button class="hero-button pale-button magnetic" id="megaCelebrate" type="button"><span>CELEBRATE EVERYTHING</span><b>♥</b></button>
+          <button class="ghost-link" id="replay" type="button">Watch the whole reveal again</button>
+          <small class="secret-hint" id="secretHint">Bonus secret: tap the round “A” seal above five times · 0/5</small>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="secret-modal" id="secretModal" aria-hidden="true">
+    <div class="secret-card">
+      <button id="closeSecret" type="button" aria-label="Close">×</button>
+      <p class="kicker">Secret unlocked</p>
+      <h2>One more thing…</h2>
+      <p>The best part of the trip is that I get to spend it with you.</p>
+      <strong>Love you ♥</strong>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="release-gate.js"></script>
+</body>
+</html>
