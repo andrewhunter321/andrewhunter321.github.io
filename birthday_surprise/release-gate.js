@@ -3,7 +3,7 @@
 
   // 29 August 2026 at 00:00 in Europe/London.
   // The UK is on BST then, so this is 28 August at 23:00 UTC.
-  const RELEASE_AT = Date.parse("2026-08-28T23:00:00Z");
+  const RELEASE_AT = Date.parse("2026-08-24T23:00:00Z");
 
   const gate = document.getElementById("releaseGate");
   const lockButton = document.getElementById("releaseLockButton");
